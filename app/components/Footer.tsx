@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <footer className='bg-[#2e2e2e] flex items-center justify-between w-full h-30'>
+    <footer className='bg-[#2e2e2e] flex items-center justify-between w-full h-20'>
         <div className='flex items-center justify-center gap-4 w-50 h-[80%] '>
             <img className='rounded-xl' src="https://bytescale.mobbin.com/FW25bBB/image/mobbin.com/prod/content/app_logos/10d663d2-a71f-49a0-b378-453a1a50ca29.jpeg?f=png&w=50&q=85&fit=shrink-cover" alt="" />
             <h1 className='text-2xl text-white'>Krea AI</h1>
