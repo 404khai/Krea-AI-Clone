@@ -19,13 +19,13 @@ const GenerateCard: FC<GenerateCardProps> = ({
   return (
     <div
       className={cn(
-        "flex items-center justify-between rounded-xl px-4 py-3 shadow-sm"
+        "flex items-center justify-between rounded-xl px-4 py-3 "
       )}
     >
       {/* Left side */}
       <div className="flex items-center gap-3">
         {/* Icon */}
-        <div className={cn("h-10 w-20 flex items-center justify-center rounded-md", background)}>
+        <div className={cn("p-2 flex items-center justify-center rounded-[10px]", background)}>
           {logo}
         </div>
 
