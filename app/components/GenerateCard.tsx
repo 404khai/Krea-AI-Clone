@@ -19,37 +19,36 @@ const GenerateCard: FC<GenerateCardProps> = ({
   return (
     <div
       className={cn(
-        "flex items-center justify-between rounded-xl px-4 py-3 shadow-sm",
-        background
+        "flex items-center justify-between rounded-xl px-4 py-3 shadow-sm"
       )}
     >
       {/* Left side */}
       <div className="flex items-center gap-3">
         {/* Icon */}
-        <div className="h-10 w-10 flex items-center justify-center rounded-md bg-white/20">
+        <div className={cn("h-10 w-20 flex items-center justify-center rounded-md", background)}>
           {logo}
         </div>
 
         {/* Text */}
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
-            <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+            <h3 className="text-sm font-semibold text-black">
               {title}
             </h3>
             {isNew && (
-              <span className="rounded-md bg-blue-500 px-1.5 py-0.5 text-[10px] font-semibold text-white">
+              <span className="rounded-lg bg-[#126cfc] px-1.5 py-0.5 text-[10px] text-white">
                 New
               </span>
             )}
           </div>
-          <p className="text-xs text-gray-600 dark:text-gray-300">
+          <p className="text-xs text-[#b0b0b0]">
             {description}
           </p>
         </div>
       </div>
 
       {/* Right side button */}
-      <button className="rounded-lg border border-gray-300 bg-white px-3 py-1 text-xs font-medium shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-600 dark:hover:bg-gray-700">
+      <button className="rounded-lg bg-[#f5f5f5] px-3 py-1 text-xs font-medium">
         Open
       </button>
     </div>
