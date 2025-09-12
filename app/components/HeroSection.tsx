@@ -2,6 +2,8 @@ import React from 'react'
 import GenerateCard from './GenerateCard'
 import { ChevronDown } from 'lucide-react';
 import Carousel from './Carousel';
+import { IoCard } from "react-icons/io5";
+import { HiNewspaper } from "react-icons/hi";
 
 const HeroSection = () => {
   return (
@@ -80,12 +82,13 @@ const HeroSection = () => {
                 <h3 className='text-xl font-medium'>Gallery</h3>
                 
                 <div className='w-100 h-13 flex items-start justify-end gap-5'>
-                    <button className='w-20 h-[70%] rounded-xl bg-[#f5f5f5] text-sm text-[#757478] font-semibold'>
+                    <button className='w-20 h-[70%] flex items-center justify-center gap-1 rounded-xl bg-[#f5f5f5] text-sm text-[#757478] font-semibold'>
+                        <HiNewspaper className='text-lg'/>
                         Legal
                     </button>
 
-                    <button className='w-20 h-[70%] rounded-xl bg-[#f5f5f5] text-sm text-[#757478] font-semibold'>
-
+                    <button className='w-20 h-[70%] flex items-center justify-center gap-1  rounded-xl bg-[#f5f5f5] text-sm text-[#757478] font-semibold'>
+                        <IoCard className='text-lg'/>
                         Pricing
                     </button>
                 </div>
