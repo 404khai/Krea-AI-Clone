@@ -19,7 +19,7 @@ const GenerateCard: FC<GenerateCardProps> = ({
   return (
     <div
       className={cn(
-        "flex items-center justify-between rounded-xl px-4 py-3 "
+        "flex items-center justify-between rounded-xl px-3  "
       )}
     >
       {/* Left side */}
@@ -32,9 +32,9 @@ const GenerateCard: FC<GenerateCardProps> = ({
         {/* Text */}
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
-            <h3 className="text-sm font-semibold text-black">
+            <h1 className="text-sm font-medium text-black">
               {title}
-            </h3>
+            </h1>
             {isNew && (
               <span className="rounded-lg bg-[#126cfc] px-1.5 py-0.5 text-[10px] text-white">
                 New
