@@ -83,7 +83,7 @@ const Carousel: FC = () => {
           <div className="absolute bottom-7 left-5 text-white z-10">
             <h2 className="text-3xl font-medium">FLUX.1 Krea</h2>
             <p className="w-[400px] text-sm mt-2">
-              We're making the weights to our FLUX.1 Krea model open-source.
+              We&apos;re making the weights to our FLUX.1 Krea model open-source.
               Download and run our model weights, read the technical report, or
               generate with it in Krea image.
             </p>
@@ -121,7 +121,7 @@ const Carousel: FC = () => {
           <div className="absolute bottom-7 left-5 text-white z-10">
             <h2 className="text-3xl font-medium">FLUX.1 Krea</h2>
             <p className="w-[400px] text-sm mt-2">
-              We're making the weights to our FLUX.1 Krea model open-source.
+              We&apos;re making the weights to our FLUX.1 Krea model open-source.
               Download and run our model weights, read the technical report, or
               generate with it in Krea image.
             </p>
@@ -158,7 +158,7 @@ const Carousel: FC = () => {
           <div className="absolute bottom-7 left-5 text-white z-10">
             <h2 className="text-3xl font-medium">FLUX.1 Krea</h2>
             <p className="w-[400px] text-sm mt-2">
-              We're making the weights to our FLUX.1 Krea model open-source.
+              We&apos;re making the weights to our FLUX.1 Krea model open-source.
               Download and run our model weights, read the technical report, or
               generate with it in Krea image.
             </p>
@@ -195,7 +195,7 @@ const Carousel: FC = () => {
           <div className="absolute bottom-7 left-5 text-white z-10">
             <h2 className="text-3xl font-medium">FLUX.1 Krea</h2>
             <p className="w-[400px] text-sm mt-2">
-              We're making the weights to our FLUX.1 Krea model open-source.
+              We&apos;re making the weights to our FLUX.1 Krea model open-source.
               Download and run our model weights, read the technical report, or
               generate with it in Krea image.
             </p>
