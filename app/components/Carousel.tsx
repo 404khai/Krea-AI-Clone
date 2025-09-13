@@ -19,18 +19,12 @@ const Carousel: FC = () => {
     if (!swiperRef.current) return;
 
     const swiper = swiperRef.current;
-    if (
-      prevRef.current &&
-      nextRef.current &&
-      paginationRef.current &&
-      swiper.params
-    ) {
-      // Attach refs manually
+    if (prevRef.current && nextRef.current && paginationRef.current) {
       swiper.params.navigation.prevEl = prevRef.current;
       swiper.params.navigation.nextEl = nextRef.current;
       swiper.params.pagination.el = paginationRef.current;
 
-      // Re-init navigation + pagination
+      // Re-init
       swiper.navigation.destroy();
       swiper.navigation.init();
       swiper.navigation.update();
@@ -49,6 +43,14 @@ const Carousel: FC = () => {
         modules={[Pagination, Navigation]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         className="w-full h-full"
+        pagination={{
+          clickable: true, // tells Swiper to render bullets
+          el: paginationRef.current!, // bind your custom container
+        }}
+        navigation={{
+          prevEl: prevRef.current!,
+          nextEl: nextRef.current!,
+        }}
       >
         {/* First Slide */}
         <SwiperSlide className="w-[61%]! rounded-[30px] overflow-hidden relative">
@@ -238,10 +240,10 @@ const Carousel: FC = () => {
       </div>
 
       {/* Custom pagination centered */}
-      <div className=" w-100 h-7 absolute bg-amber-400 -bottom-8 left-1/2 -translate-x-1/2 z-20">
+      <div className=" w-70 h-7 absolute bg-amber-400 -bottom-8 left-1/2 -translate-x-1/2 z-20">
         <div
           ref={paginationRef}
-          className="w-full h-full custom-pagination flex space-x-2"
+          className="custom-pagination flex space-x-2"
         ></div>
       </div>
 
