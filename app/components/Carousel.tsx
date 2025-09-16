@@ -1,8 +1,9 @@
 "use client";
-import { FC, useRef, useEffect } from "react";
+import { FC, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import type { Swiper as SwiperType } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -13,27 +14,7 @@ const Carousel: FC = () => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
   const paginationRef = useRef<HTMLDivElement | null>(null);
-  const swiperRef = useRef<any>(null);
-
-  useEffect(() => {
-    if (!swiperRef.current) return;
-
-    const swiper = swiperRef.current;
-    if (prevRef.current && nextRef.current && paginationRef.current) {
-      swiper.params.navigation.prevEl = prevRef.current;
-      swiper.params.navigation.nextEl = nextRef.current;
-      swiper.params.pagination.el = paginationRef.current;
-
-      // Re-init
-      swiper.navigation.destroy();
-      swiper.navigation.init();
-      swiper.navigation.update();
-
-      swiper.pagination.destroy();
-      swiper.pagination.init();
-      swiper.pagination.update();
-    }
-  }, []);
+  const swiperRef = useRef<SwiperType | null>(null);
 
   return (
     <div className="relative w-full h-[400px] flex justify-center pl-8 pr-1 mb-30">
@@ -41,17 +22,35 @@ const Carousel: FC = () => {
         slidesPerView={"auto"}
         spaceBetween={40}
         modules={[Pagination, Navigation]}
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        onSwiper={(s) => (swiperRef.current = s)}
+        onBeforeInit={(swiper) => {
+          // --- Navigation ---
+          if (prevRef.current && nextRef.current) {
+            // create a safe object copy only if the current params.navigation is an object
+            let navParams: Record<string, unknown> = {};
+            if (swiper.params.navigation && typeof swiper.params.navigation === "object") {
+              navParams = { ...(swiper.params.navigation as Record<string, unknown>) };
+            }
+            (navParams as Record<string, unknown>).prevEl = prevRef.current;
+            (navParams as Record<string, unknown>).nextEl = nextRef.current;
+            // assign back (assert type because Swiper's type allows boolean)
+            swiper.params.navigation = navParams as any;
+          }
+
+          // --- Pagination ---
+          if (paginationRef.current) {
+            let pagParams: Record<string, unknown> = {};
+            if (swiper.params.pagination && typeof swiper.params.pagination === "object") {
+              pagParams = { ...(swiper.params.pagination as Record<string, unknown>) };
+            }
+            (pagParams as Record<string, unknown>).el = paginationRef.current;
+            (pagParams as Record<string, unknown>).clickable = true;
+            swiper.params.pagination = pagParams as any;
+          }
+        }}
         className="w-full h-full"
-        pagination={{
-          clickable: true, // tells Swiper to render bullets
-          el: paginationRef.current!, // bind your custom container
-        }}
-        navigation={{
-          prevEl: prevRef.current!,
-          nextEl: nextRef.current!,
-        }}
       >
+
         {/* First Slide */}
         <SwiperSlide className="w-[61%]! rounded-[30px] overflow-hidden relative">
           <img
@@ -90,137 +89,7 @@ const Carousel: FC = () => {
           </div>
         </SwiperSlide>
 
-
-        <SwiperSlide className="w-[61%]! rounded-[30px] overflow-hidden relative">
-          <img
-            src="https://s.krea.ai/announce-wan-2-2-image.webp"
-            alt="WAN 2.2"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/15 mix-blend-multiply" />
-          <div className="absolute bottom-7 left-5 text-white z-10">
-            <h2 className="text-3xl font-medium">WAN 2.2 Image generation</h2>
-            <p className="w-[400px] text-sm mt-2">
-              Generate complex images with the brand new and powerful WAN 2.2
-              model. Exceptional prompt adherence and ultra-realistic textures.
-            </p>
-          </div>
-          <button className="absolute bottom-7 right-5 bg-white z-10 font-medium rounded-3xl px-5 py-3 shadow-md">
-            Try WAN 2.2
-          </button>
-        </SwiperSlide>
-
-        {/* Second Slide */}
-        <SwiperSlide className="w-[50%]! overflow-hidden relative rounded-[30px]">
-          <img
-            src="https://s.krea.ai/OSSKreaFlux1_poster.webp"
-            alt="FLUX"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/15 mix-blend-multiply" />
-          <div className="absolute bottom-7 left-5 text-white z-10">
-            <h2 className="text-3xl font-medium">FLUX.1 Krea</h2>
-            <p className="w-[400px] text-sm mt-2">
-              We&apos;re making the weights to our FLUX.1 Krea model open-source.
-              Download and run our model weights, read the technical report, or
-              generate with it in Krea image.
-            </p>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className="w-[61%]! rounded-[30px] overflow-hidden relative">
-          <img
-            src="https://s.krea.ai/announce-wan-2-2-image.webp"
-            alt="WAN 2.2"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/15 mix-blend-multiply" />
-          <div className="absolute bottom-7 left-5 text-white z-10">
-            <h2 className="text-3xl font-medium">WAN 2.2 Image generation</h2>
-            <p className="w-[400px] text-sm mt-2">
-              Generate complex images with the brand new and powerful WAN 2.2
-              model. Exceptional prompt adherence and ultra-realistic textures.
-            </p>
-          </div>
-          <button className="absolute bottom-7 right-5 bg-white z-10 font-medium rounded-3xl px-5 py-3 shadow-md">
-            Try WAN 2.2
-          </button>
-        </SwiperSlide>
-
-        {/* Second Slide */}
-        <SwiperSlide className="w-[50%]! overflow-hidden relative rounded-[30px]">
-          <img
-            src="https://s.krea.ai/OSSKreaFlux1_poster.webp"
-            alt="FLUX"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/15 mix-blend-multiply" />
-          <div className="absolute bottom-7 left-5 text-white z-10">
-            <h2 className="text-3xl font-medium">FLUX.1 Krea</h2>
-            <p className="w-[400px] text-sm mt-2">
-              We&apos;re making the weights to our FLUX.1 Krea model open-source.
-              Download and run our model weights, read the technical report, or
-              generate with it in Krea image.
-            </p>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className="w-[61%]! rounded-[30px] overflow-hidden relative">
-          <img
-            src="https://s.krea.ai/announce-wan-2-2-image.webp"
-            alt="WAN 2.2"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/15 mix-blend-multiply" />
-          <div className="absolute bottom-7 left-5 text-white z-10">
-            <h2 className="text-3xl font-medium">WAN 2.2 Image generation</h2>
-            <p className="w-[400px] text-sm mt-2">
-              Generate complex images with the brand new and powerful WAN 2.2
-              model. Exceptional prompt adherence and ultra-realistic textures.
-            </p>
-          </div>
-          <button className="absolute bottom-7 right-5 bg-white z-10 font-medium rounded-3xl px-5 py-3 shadow-md">
-            Try WAN 2.2
-          </button>
-        </SwiperSlide>
-
-        {/* Second Slide */}
-        <SwiperSlide className="w-[50%]! overflow-hidden relative rounded-[30px]">
-          <img
-            src="https://s.krea.ai/OSSKreaFlux1_poster.webp"
-            alt="FLUX"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/15 mix-blend-multiply" />
-          <div className="absolute bottom-7 left-5 text-white z-10">
-            <h2 className="text-3xl font-medium">FLUX.1 Krea</h2>
-            <p className="w-[400px] text-sm mt-2">
-              We&apos;re making the weights to our FLUX.1 Krea model open-source.
-              Download and run our model weights, read the technical report, or
-              generate with it in Krea image.
-            </p>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className="w-[61%]! rounded-[30px] overflow-hidden relative">
-          <img
-            src="https://s.krea.ai/announce-wan-2-2-image.webp"
-            alt="WAN 2.2"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/15 mix-blend-multiply" />
-          <div className="absolute bottom-7 left-5 text-white z-10">
-            <h2 className="text-3xl font-medium">WAN 2.2 Image generation</h2>
-            <p className="w-[400px] text-sm mt-2">
-              Generate complex images with the brand new and powerful WAN 2.2
-              model. Exceptional prompt adherence and ultra-realistic textures.
-            </p>
-          </div>
-          <button className="absolute bottom-7 right-5 bg-white z-10 font-medium rounded-3xl px-5 py-3 shadow-md">
-            Try WAN 2.2
-          </button>
-        </SwiperSlide>
-
+        {/* ... keep your other SwiperSlides here (unchanged) ... */}
       </Swiper>
 
       {/* Custom carousel navigation arrows*/}
@@ -240,17 +109,16 @@ const Carousel: FC = () => {
       </div>
 
       {/* Custom pagination centered */}
-      <div className=" w-70 h-7 absolute bg-amber-400 -bottom-8 left-1/2 -translate-x-1/2 z-20">
+      {/* <div className="w-70 h-7 absolute bg-amber-400 -bottom-8 left-1/2 -translate-x-1/2 z-20">
         <div
           ref={paginationRef}
           className="custom-pagination flex space-x-2"
         ></div>
-      </div>
+      </div> */}
 
-      {/* <div
-        ref={paginationRef}
-        className="w-fit! h-5 flex items-center custom-pagination bg-white border-2 z-20 absolute -bottom-8 left-1/2 -translate-x-1/2  space-x-2"
-      ></div> */}
+      <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 z-20">
+        <div ref={paginationRef} className="custom-pagination flex space-x-2"></div>
+      </div>
 
       {/* Tailwind override for dots */}
       <style jsx global>{`
