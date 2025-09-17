@@ -73,7 +73,7 @@ const Carousel: FC = () => {
               model. Exceptional prompt adherence and ultra-realistic textures.
             </p>
           </div>
-          <button className="absolute -bottom-5 md:bottom-7 right-3 md:right-5 bg-white z-10 font-medium rounded-2xl md:rounded-3xl px-3 md:px-5 py-2 md:py-3 shadow-md text-sm">
+          <button className="absolute -bottom-30 md:bottom-7 right-3 md:right-5 bg-white z-10 font-medium rounded-2xl md:rounded-3xl px-3 md:px-5 py-2 md:py-3 shadow-md text-sm">
             Try WAN 2.2
           </button>
         </SwiperSlide>
@@ -110,7 +110,7 @@ const Carousel: FC = () => {
               model. Exceptional prompt adherence and ultra-realistic textures.
             </p>
           </div>
-          <button className="absolute bottom-5 md:bottom-7 max-md:bottom-20 right-3 md:right-5 bg-white z-10 font-medium rounded-2xl md:rounded-3xl px-3 md:px-5 py-2 md:py-3 shadow-md text-sm">
+          <button className="absolute -bottom-30 md:bottom-7 right-3 md:right-5 bg-white z-10 font-medium rounded-2xl md:rounded-3xl px-3 md:px-5 py-2 md:py-3 shadow-md text-sm">
             Try WAN 2.2
           </button>
         </SwiperSlide>
@@ -147,7 +147,7 @@ const Carousel: FC = () => {
               model. Exceptional prompt adherence and ultra-realistic textures.
             </p>
           </div>
-          <button className="absolute bottom-5 md:bottom-7 right-3 md:right-5 bg-white z-10 font-medium rounded-2xl md:rounded-3xl px-3 md:px-5 py-2 md:py-3 shadow-md text-sm">
+          <button className="absolute -bottom-30 md:bottom-7 right-3 md:right-5 bg-white z-10 font-medium rounded-2xl md:rounded-3xl px-3 md:px-5 py-2 md:py-3 shadow-md text-sm">
             Try WAN 2.2
           </button>
         </SwiperSlide>
@@ -160,13 +160,13 @@ const Carousel: FC = () => {
           ref={prevRef}
           className="custom-prev bg-[#f2f2f2] rounded-full w-8 md:w-10 h-8 md:h-10 flex items-center justify-center"
         >
-          <FiChevronLeft size={18} className="md:size-22 text-gray-800" />
+          <FiChevronLeft size={18} className="md:size-22 size-20 text-gray-800" />
         </button>
         <button
           ref={nextRef}
           className="custom-next bg-[#f2f2f2] rounded-full w-8 md:w-10 h-8 md:h-10 flex items-center justify-center"
         >
-          <FiChevronRight size={18} className="md:size-22 text-gray-800" />
+          <FiChevronRight size={18} className="md:size-22 size-20 text-gray-800" />
         </button>
       </div>
 

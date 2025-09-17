@@ -10,7 +10,7 @@ const HeroSection = () => {
     <>
         <Carousel/>
 
-        <div className='h-fit flex flex-col items-center'>
+        <div className='dark:bg-[#202020] bg-white h-fit flex flex-col items-center'>
             <div className='w-[95%] h-fit flex items-center justify-between mb-4'>
                 <h3 className='text-xl font-medium'>Generate</h3>
                 <p className='flex items-center text-[#2781d6] text-sm cursor-pointer'>
