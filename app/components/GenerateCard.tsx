@@ -6,6 +6,7 @@ interface GenerateCardProps {
   title: string;
   description: string;
   isNew?: boolean;
+  isOpenBtn?: boolean;
   background?: string; // Tailwind class for bg or gradient
 }
 
@@ -13,6 +14,7 @@ const GenerateCard: FC<GenerateCardProps> = ({
   logo,
   title,
   description,
+  isOpenBtn = false,
   isNew = false,
   background = "bg-white",
 }) => {
@@ -48,9 +50,11 @@ const GenerateCard: FC<GenerateCardProps> = ({
       </div>
 
       {/* Right side button */}
+      {isOpenBtn && (
       <button className="rounded-lg bg-[#f5f5f5] px-3 py-1 text-xs font-medium">
         Open
       </button>
+      )}
     </div>
   );
 };
