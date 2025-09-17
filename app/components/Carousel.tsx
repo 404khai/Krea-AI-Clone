@@ -9,6 +9,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { NavigationOptions, PaginationOptions } from "swiper/types";
 
 const Carousel: FC = () => {
   const prevRef = useRef<HTMLButtonElement | null>(null);
@@ -25,14 +26,13 @@ const Carousel: FC = () => {
       prevRef.current &&
       nextRef.current &&
       paginationRef.current &&
-      swiper.params
+      swiper.params.navigation &&
+      swiper.params.pagination
     ) {
-      // Attach refs manually
-      swiper.params.navigation.prevEl = prevRef.current;
-      swiper.params.navigation.nextEl = nextRef.current;
-      swiper.params.pagination.el = paginationRef.current;
+      (swiper.params.navigation as NavigationOptions).prevEl = prevRef.current;
+      (swiper.params.navigation as NavigationOptions).nextEl = nextRef.current;
+      (swiper.params.pagination as PaginationOptions).el = paginationRef.current;
 
-      // Re-init navigation + pagination
       swiper.navigation.destroy();
       swiper.navigation.init();
       swiper.navigation.update();
@@ -41,7 +41,7 @@ const Carousel: FC = () => {
       swiper.pagination.init();
       swiper.pagination.update();
     }
-  }, []);
+  })
 
   return (
     <div className="relative mt-7 w-full h-[250px] md:h-[400px] flex justify-center pl-2 md:pl-8 pr-2 md:pr-1 mb-30">
@@ -173,14 +173,14 @@ const Carousel: FC = () => {
       {/* Custom pagination centered */}
       <div
         ref={paginationRef}
-        className="custom-pagination bg-amber-400 flex items-center space-x-1 z-20 absolute -bottom-6 md:-bottom-8 left-1/2 -translate-x-1/2"
+        className="custom-pagination bg-amber-400 flex items-center space-x-1 z-20 absolute -bottom-6 md:-bottom-8  -translate-x-1/2"
       ></div>
 
       {/* Tailwind override for dots */}
       <style jsx global>{`
         .custom-pagination .swiper-pagination-bullet {
-          width: 8px;
-          height: 8px;
+          width: 80px;
+          height: 80px;
           border-radius: 50%;
           background-color: #c4c4c4;
           opacity: 1;
