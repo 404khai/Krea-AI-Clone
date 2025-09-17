@@ -10,33 +10,36 @@ const HeroSection = () => {
     <>
         <Carousel/>
 
-        <div className='flex flex-col items-center'>
-            <div className='w-[95%] h-fit flex items-center justify-between'>
+        <div className='h-fit flex flex-col items-center'>
+            <div className='w-[95%] h-fit flex items-center justify-between mb-4'>
                 <h3 className='text-xl font-medium'>Generate</h3>
-                <p className='flex items-center text-[#2781d6] text-sm '>
+                <p className='flex items-center text-[#2781d6] text-sm cursor-pointer'>
                     <ChevronDown/>
                     Show all
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pl-4 pr-4 pb-10 w-full h-50">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 w-full mb-10">
                     {/* Row 1 */}
                 <GenerateCard
                     logo={<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="inset-0 z-20 m-auto"><path fillRule="evenodd" clipRule="evenodd" d="M10.4763 9.85043C10.4763 10.8104 9.69763 11.589 8.73768 11.589C7.77772 11.589 7 10.8104 7 9.85043C7 8.89049 7.77772 8.11182 8.73768 8.11182C9.69763 8.11182 10.4754 8.88955 10.4763 9.84856V9.85043Z" fill="currentColor"></path><rect x="2.75" y="3.86182" width="18.5" height="16.5" rx="3.25" stroke="currentColor" strokeWidth="1.5"></rect><path d="M15.758 13.1118C17.5271 13.1118 19.1544 14.6938 20 15.4766V19.1118H4C4 19.1118 5.29914 17.0464 6.6586 16.0349C8.01806 15.0235 9.56678 16.6015 11.2673 16.6015C12.9687 16.6015 13.9898 13.1118 15.758 13.1118Z" fill="currentColor" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>}
                     title="Image"
                     description="Generate images with custom styles in Flux and Ideogram."
                     isNew
+                    isOpenBtn
                     background="bg-[linear-gradient(0deg,#D0E3F1_0%,#294962_100%)] text-white"
                 />
                 <GenerateCard
                     logo={<svg width="18" height="18" className="inset-0 z-20 m-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M22.263 7.17399C21.637 6.41199 20.506 6.30099 19.743 6.92499L18.5167 7.92894C18.2593 8.13966 18.1409 8.46318 18.1571 8.79542C18.1589 8.83351 18.16 8.872 18.16 8.91099V15.312C18.16 15.3533 18.1588 15.3941 18.1568 15.4344C18.14 15.7656 18.2584 16.0881 18.5146 16.2987L19.729 17.297C20.045 17.558 20.448 17.701 20.863 17.701C21.849 17.701 22.654 16.899 22.657 15.912L22.669 8.31399C22.67 7.89899 22.527 7.49299 22.263 7.17399Z" fill="currentColor"></path><path fillRule="evenodd" clipRule="evenodd" d="M12.6444 5.11182H5.68203C3.08003 5.11182 1.33203 6.93982 1.33203 9.66182V15.0618C1.33203 17.7838 3.08003 19.6118 5.68203 19.6118H12.6434C15.2474 19.6118 16.9964 17.7838 16.9964 15.0618V9.66182C16.9964 6.93982 15.2474 5.11182 12.6444 5.11182Z" fill="currentColor"></path><rect x="1" y="5.11182" width="16" height="15" rx="4" fill="currentColor"></rect></svg>}
                     title="Video"
+                    isOpenBtn
                     description="Generate videos with Hailuo, Pika, Runway, Luma, and more."
                     background="bg-[#ffa700] text-white"
                 />
                 <GenerateCard
                     logo={<svg width="18" height="18" className="inset-0 z-20 m-auto text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.9472 14.4612C14.6244 14.8306 14.4629 15.0153 14.2819 15.1777C14.121 15.3219 13.9487 15.4529 13.7667 15.5693C13.5618 15.7004 13.3384 15.8077 12.8914 16.0223C11.8174 16.538 11.2804 16.7959 10.9271 16.705C10.6205 16.626 10.3693 16.4065 10.25 16.1132C10.1126 15.7753 10.2963 15.2086 10.6635 14.0752C10.8164 13.6035 10.8928 13.3677 10.9952 13.1471C11.0863 12.9511 11.193 12.7629 11.3144 12.5842C11.4511 12.383 11.6125 12.1983 11.9354 11.8289L17.0023 6.03138C17.076 5.94704 17.1129 5.90487 17.1574 5.88701C17.1966 5.87129 17.2398 5.86839 17.2807 5.87871C17.3273 5.89045 17.3695 5.92731 17.4538 6.00102L19.9838 8.21213C20.0681 8.28584 20.1103 8.3227 20.1281 8.36727C20.1438 8.40647 20.1467 8.44964 20.1364 8.4906C20.1247 8.53715 20.0878 8.57932 20.0141 8.66366L14.9472 14.4612Z" fill="currentColor"></path><path d="M20.8883 7.65066C20.8146 7.73499 20.7778 7.77716 20.7332 7.79503C20.694 7.81075 20.6508 7.81365 20.6099 7.80333C20.5633 7.79159 20.5211 7.75473 20.4368 7.68102L17.9096 5.47231C17.8253 5.3986 17.7831 5.36175 17.7652 5.31718C17.7495 5.27798 17.7466 5.23481 17.7569 5.19385C17.7687 5.14729 17.8055 5.10512 17.8792 5.02079L18.3305 4.50446C18.6354 4.15563 18.7878 3.98121 18.9511 3.87147C19.3968 3.57199 19.9685 3.53354 20.4502 3.77066C20.6267 3.85755 20.8012 4.00999 21.15 4.31486C21.4988 4.61972 21.6732 4.77216 21.783 4.93546C22.0824 5.3811 22.1209 5.95283 21.8838 6.43456C21.7969 6.61108 21.6444 6.7855 21.3396 7.13432L20.8883 7.65066Z" fill="currentColor"></path><path d="M9.5 18C9.5 18 7.2314 20.6818 6 20C4.7686 19.3182 8.43957 14.8136 8.43957 13.0357C8.43957 12.0802 5.54026 16.2053 3.75331 16.7185C0.87539 17.5452 7.17108 5 7.17108 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>} // Replace with proper Realtime icon
                     title="Realtime"
+                    isOpenBtn
                     description="Realtime AI rendering on a canvas. Instant feedback loops."
                     background="bg-[linear-gradient(0deg,#CEF6FF_0%,#00D2FF_35%,#009DF1_100%)]"
                 />
@@ -45,6 +48,7 @@ const HeroSection = () => {
                     title="Enhancer"
                     description="Upscale and enhance images and videos up to 22K."
                     isNew
+                    isOpenBtn
                     background="bg-[linear-gradient(0deg,#888888_0%,#000000_100%)]"
                 />
 
@@ -54,6 +58,7 @@ const HeroSection = () => {
                     title="Edit"
                     description="Add objects, change style, or expand photos and generations."
                     isNew
+                    isOpenBtn
                     background="bg-[linear-gradient(0deg,#AE91CA_0%,#592A85_60%,#180728_100%)] text-white"
                 />
                 <GenerateCard
@@ -65,6 +70,7 @@ const HeroSection = () => {
                     title="Video Lipsync"
                     description="Lip sync any video to any audio."
                     isNew
+                    isOpenBtn
                     background="bg-[linear-gradient(0deg,#BBCA91_0%,#3C878F_60%,#07280F_100%)] text-white"
                 />
                 <GenerateCard
@@ -72,17 +78,19 @@ const HeroSection = () => {
                     title="Motion Transfer"
                     description="Transfer motion to images and animate characters."
                     isNew
+                    isOpenBtn
                     background="bg-black"
                 />
                 <GenerateCard
-                    logo={<span className="text-white">🎨</span>} // Replace with Train icon
+                    logo={<svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-[#c4c4c5] block shrink-0" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="circleMask"><circle cx="12" cy="12" r="7"></circle></clipPath><linearGradient id="fadeGradient" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stopColor="white" stopOpacity="0.6"></stop><stop offset="75%" stopColor="white" stopOpacity="0.15"></stop><stop offset="100%" stopColor="white" stopOpacity="0"></stop></linearGradient></defs><image href="/train-icon-photo.webp" x="5" y="5" width="14" height="14" clipPath="url(#circleMask)"></image><circle cx="12" cy="12" r="6" fill="url(#fadeGradient)"></circle><path d="M16.625 20.1226C14.6815 21.2446 12.3964 21.6219 10.1954 21.1841C7.99441 20.7463 6.02762 19.5232 4.66148 17.7429C3.29534 15.9625 2.62303 13.7462 2.7698 11.5068C2.91658 9.26752 3.87243 7.15792 5.45926 5.57108" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path><path d="M20.0107 7.48682C21.0289 9.25025 21.4366 11.3004 21.1709 13.3192C20.9051 15.338 19.9806 17.2127 18.5407 18.6526" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path><path d="M12 2.86182C13.2147 2.86182 14.4176 3.10107 15.5398 3.56593C16.6621 4.03079 17.6818 4.71214 18.5407 5.57108" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path><path d="M7.375 4.10108C8.07507 3.6969 8.8251 3.38622 9.60592 3.177" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path></svg>} // Replace with Train icon
                     title="Train"
+                    isOpenBtn
                     description="Teach Krea to replicate your style, products, or characters."
-                    background="bg-gradient-to-b from-[#F3D1A5] to-[#E89C7A]"
+                    background="bg-transparent"
                 />
             </div>
         
-            <div className='w-[95%] h-fit flex items-center justify-between'>
+            <div className='w-[95%] h-fit flex items-center justify-between mb-4'>
                 <h3 className='text-xl font-medium'>Gallery</h3>
                 
                 <div className='w-100 h-13 flex items-start justify-end gap-5'>

@@ -6,6 +6,8 @@ interface GenerateCardProps {
   title: string;
   description: string;
   isNew?: boolean;
+  withPadding?: boolean;
+  isOpenBtn?: boolean;
   background?: string; // Tailwind class for bg or gradient
 }
 
@@ -13,13 +15,16 @@ const GenerateCard: FC<GenerateCardProps> = ({
   logo,
   title,
   description,
+  isOpenBtn = false,
   isNew = false,
+  withPadding = true,
   background = "bg-white",
 }) => {
   return (
     <div
       className={cn(
-        "flex items-center justify-between rounded-xl px-3  "
+        "flex items-center justify-between rounded-xl",
+        withPadding && "px-3" // only applies when true
       )}
     >
       {/* Left side */}
@@ -48,9 +53,11 @@ const GenerateCard: FC<GenerateCardProps> = ({
       </div>
 
       {/* Right side button */}
+      {isOpenBtn && (
       <button className="rounded-lg bg-[#f5f5f5] px-3 py-1 text-xs font-medium">
         Open
       </button>
+      )}
     </div>
   );
 };
