@@ -158,15 +158,15 @@ const Carousel: FC = () => {
       <div className="absolute bottom-[-2.5rem] md:bottom-[-3rem] right-10 md:right-40 translate-x-1/2 flex items-center space-x-3 z-20">
         <button
           ref={prevRef}
-          className="custom-prev bg-[#f2f2f2] rounded-full w-8 md:w-10 h-8 md:h-10 flex items-center justify-center"
+          className="custom-prev bg-[#f2f2f2] dark:bg-[#262626] rounded-full w-8 md:w-10 h-8 md:h-10 flex items-center justify-center"
         >
-          <FiChevronLeft size={18} className="md:size-22 size-20 text-gray-800" />
+          <FiChevronLeft size={18} className="md:size-22 size-20 text-gray-800 dark:text-white" />
         </button>
         <button
           ref={nextRef}
-          className="custom-next bg-[#f2f2f2] rounded-full w-8 md:w-10 h-8 md:h-10 flex items-center justify-center"
+          className="custom-next bg-[#f2f2f2] dark:bg-[#262626] rounded-full w-8 md:w-10 h-8 md:h-10 flex items-center justify-center"
         >
-          <FiChevronRight size={18} className="md:size-22 size-20 text-gray-800" />
+          <FiChevronRight size={18} className="md:size-22 size-20 text-gray-800 dark:text-white" />
         </button>
       </div>
 

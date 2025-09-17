@@ -37,7 +37,7 @@ const GenerateCard: FC<GenerateCardProps> = ({
         {/* Text */}
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
-            <h1 className="text-sm font-medium text-black">
+            <h1 className="text-sm font-medium text-black dark:text-white">
               {title}
             </h1>
             {isNew && (
@@ -54,7 +54,7 @@ const GenerateCard: FC<GenerateCardProps> = ({
 
       {/* Right side button */}
       {isOpenBtn && (
-      <button className="rounded-lg bg-[#f5f5f5] px-3 py-1 text-xs font-medium">
+      <button className="rounded-lg bg-[#f5f5f5] dark:bg-[#262626] px-3 py-1 dark:text-white text-xs font-medium">
         Open
       </button>
       )}

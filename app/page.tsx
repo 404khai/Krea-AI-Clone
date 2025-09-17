@@ -5,10 +5,10 @@ import HeroSection from "./components/HeroSection";
 
 export default function Home() {
   return (
-    <>
+    <div className="dark:bg-[#0f0f0f]">
       <Navbar/>
       <HeroSection/>
       <Footer/>
-    </>
+    </div>
   );
 }
