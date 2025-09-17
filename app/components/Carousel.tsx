@@ -73,7 +73,7 @@ const Carousel: FC = () => {
               model. Exceptional prompt adherence and ultra-realistic textures.
             </p>
           </div>
-          <button className="absolute bottom-5 md:bottom-7 right-3 md:right-5 bg-white z-10 font-medium rounded-2xl md:rounded-3xl px-3 md:px-5 py-2 md:py-3 shadow-md text-sm">
+          <button className="absolute -bottom-5 md:bottom-7 right-3 md:right-5 bg-white z-10 font-medium rounded-2xl md:rounded-3xl px-3 md:px-5 py-2 md:py-3 shadow-md text-sm">
             Try WAN 2.2
           </button>
         </SwiperSlide>
@@ -110,7 +110,7 @@ const Carousel: FC = () => {
               model. Exceptional prompt adherence and ultra-realistic textures.
             </p>
           </div>
-          <button className="absolute bottom-5 md:bottom-7 right-3 md:right-5 bg-white z-10 font-medium rounded-2xl md:rounded-3xl px-3 md:px-5 py-2 md:py-3 shadow-md text-sm">
+          <button className="absolute bottom-5 md:bottom-7 max-md:bottom-20 right-3 md:right-5 bg-white z-10 font-medium rounded-2xl md:rounded-3xl px-3 md:px-5 py-2 md:py-3 shadow-md text-sm">
             Try WAN 2.2
           </button>
         </SwiperSlide>

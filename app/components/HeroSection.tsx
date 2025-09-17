@@ -10,16 +10,16 @@ const HeroSection = () => {
     <>
         <Carousel/>
 
-        <div className='flex flex-col items-center'>
-            <div className='w-[95%] h-fit flex items-center justify-between'>
+        <div className='h-fit flex flex-col items-center'>
+            <div className='w-[95%] h-fit flex items-center justify-between mb-4'>
                 <h3 className='text-xl font-medium'>Generate</h3>
-                <p className='flex items-center text-[#2781d6] text-sm '>
+                <p className='flex items-center text-[#2781d6] text-sm cursor-pointer'>
                     <ChevronDown/>
                     Show all
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pl-4 pr-4 pb-10 w-full h-50">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 w-full mb-10">
                     {/* Row 1 */}
                 <GenerateCard
                     logo={<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="inset-0 z-20 m-auto"><path fillRule="evenodd" clipRule="evenodd" d="M10.4763 9.85043C10.4763 10.8104 9.69763 11.589 8.73768 11.589C7.77772 11.589 7 10.8104 7 9.85043C7 8.89049 7.77772 8.11182 8.73768 8.11182C9.69763 8.11182 10.4754 8.88955 10.4763 9.84856V9.85043Z" fill="currentColor"></path><rect x="2.75" y="3.86182" width="18.5" height="16.5" rx="3.25" stroke="currentColor" strokeWidth="1.5"></rect><path d="M15.758 13.1118C17.5271 13.1118 19.1544 14.6938 20 15.4766V19.1118H4C4 19.1118 5.29914 17.0464 6.6586 16.0349C8.01806 15.0235 9.56678 16.6015 11.2673 16.6015C12.9687 16.6015 13.9898 13.1118 15.758 13.1118Z" fill="currentColor" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>}
@@ -82,15 +82,15 @@ const HeroSection = () => {
                     background="bg-black"
                 />
                 <GenerateCard
-                    logo={<svg width="44" height="44" viewBox="0 0 24 24" fill="none" className="text-[#c4c4c5] block shrink-0" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="circleMask"><circle cx="12" cy="12" r="7"></circle></clipPath><linearGradient id="fadeGradient" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stopColor="white" stopOpacity="0.6"></stop><stop offset="75%" stopColor="white" stopOpacity="0.15"></stop><stop offset="100%" stopColor="white" stopOpacity="0"></stop></linearGradient></defs><image href="/train-icon-photo.webp" x="5" y="5" width="14" height="14" clipPath="url(#circleMask)"></image><circle cx="12" cy="12" r="6" fill="url(#fadeGradient)"></circle><path d="M16.625 20.1226C14.6815 21.2446 12.3964 21.6219 10.1954 21.1841C7.99441 20.7463 6.02762 19.5232 4.66148 17.7429C3.29534 15.9625 2.62303 13.7462 2.7698 11.5068C2.91658 9.26752 3.87243 7.15792 5.45926 5.57108" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path><path d="M20.0107 7.48682C21.0289 9.25025 21.4366 11.3004 21.1709 13.3192C20.9051 15.338 19.9806 17.2127 18.5407 18.6526" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path><path d="M12 2.86182C13.2147 2.86182 14.4176 3.10107 15.5398 3.56593C16.6621 4.03079 17.6818 4.71214 18.5407 5.57108" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path><path d="M7.375 4.10108C8.07507 3.6969 8.8251 3.38622 9.60592 3.177" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path></svg>} // Replace with Train icon
+                    logo={<svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-[#c4c4c5] block shrink-0" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="circleMask"><circle cx="12" cy="12" r="7"></circle></clipPath><linearGradient id="fadeGradient" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stopColor="white" stopOpacity="0.6"></stop><stop offset="75%" stopColor="white" stopOpacity="0.15"></stop><stop offset="100%" stopColor="white" stopOpacity="0"></stop></linearGradient></defs><image href="/train-icon-photo.webp" x="5" y="5" width="14" height="14" clipPath="url(#circleMask)"></image><circle cx="12" cy="12" r="6" fill="url(#fadeGradient)"></circle><path d="M16.625 20.1226C14.6815 21.2446 12.3964 21.6219 10.1954 21.1841C7.99441 20.7463 6.02762 19.5232 4.66148 17.7429C3.29534 15.9625 2.62303 13.7462 2.7698 11.5068C2.91658 9.26752 3.87243 7.15792 5.45926 5.57108" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path><path d="M20.0107 7.48682C21.0289 9.25025 21.4366 11.3004 21.1709 13.3192C20.9051 15.338 19.9806 17.2127 18.5407 18.6526" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path><path d="M12 2.86182C13.2147 2.86182 14.4176 3.10107 15.5398 3.56593C16.6621 4.03079 17.6818 4.71214 18.5407 5.57108" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path><path d="M7.375 4.10108C8.07507 3.6969 8.8251 3.38622 9.60592 3.177" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path></svg>} // Replace with Train icon
                     title="Train"
                     isOpenBtn
                     description="Teach Krea to replicate your style, products, or characters."
-                    background="bg-gradient-to-b from-[#F3D1A5] to-[#E89C7A]"
+                    background="bg-transparent"
                 />
             </div>
         
-            <div className='w-[95%] h-fit flex items-center justify-between'>
+            <div className='w-[95%] h-fit flex items-center justify-between mb-4'>
                 <h3 className='text-xl font-medium'>Gallery</h3>
                 
                 <div className='w-100 h-13 flex items-start justify-end gap-5'>
