@@ -155,7 +155,7 @@ const Carousel: FC = () => {
       </Swiper>
 
       {/* Custom carousel navigation arrows*/}
-      <div className="absolute bottom-[-2.5rem] md:bottom-[-3rem] right-10 md:right-40 translate-x-1/2 flex items-center space-x-3 z-20">
+      <div className="absolute bottom-[-2.5rem] md:bottom-[-3rem] right-15 md:right-40 translate-x-1/2 flex items-center space-x-3 z-20">
         <button
           ref={prevRef}
           className="custom-prev bg-[#f2f2f2] dark:bg-[#262626] rounded-full w-8 md:w-10 h-8 md:h-10 flex items-center justify-center"
